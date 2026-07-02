@@ -58,7 +58,7 @@ button {
 
 /* Efecto al pasar el cursor (hover) */
 button:hover {
- transform: scale(0.1); /* Aumenta el tamaño */
+ transform: scale(1.5); /* Aumenta el tamaño */
  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
 }
 
