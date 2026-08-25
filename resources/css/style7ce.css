@@ -1,0 +1,517 @@
+/*=========================================
+    PSICOLOGÍA PREMIUM
+=========================================*/
+
+:root{
+
+    --primary:#1E3A5F;
+    --secondary:#A8C3B1;
+    --gold:#C7A66A;
+    --light:#F7F9FB;
+    --white:#FFFFFF;
+    --dark:#2F2F2F;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    color:var(--dark);
+    background:#fff;
+    overflow-x:hidden;
+
+}
+
+h1,h2,h3,h4{
+
+    font-family:'Playfair Display',serif;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+/*======================
+NAVBAR
+======================*/
+
+.navbar{
+
+    transition:.4s;
+    padding:18px 0;
+
+    background:rgba(16,35,55,.65);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.navbar-brand{
+
+    font-size:28px;
+    font-weight:bold;
+
+}
+
+.nav-link{
+
+    color:#fff!important;
+    margin-left:20px;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:var(--gold)!important;
+
+}
+
+.btn-warning{
+
+    background:var(--gold);
+    border:none;
+    color:#fff;
+    border-radius:50px;
+    padding:12px 25px;
+
+}
+
+.btn-warning:hover{
+
+    background:#b89356;
+
+}
+
+/*======================
+HERO
+======================*/
+
+.hero{
+
+    height:100vh;
+
+    background:url("../img/hero.jpg") center center/cover no-repeat;
+
+    position:relative;
+
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(rgba(12,29,45,.65),rgba(12,29,45,.72));
+
+}
+
+.hero .container{
+
+    position:relative;
+    z-index:5;
+
+}
+
+.hero h1{
+
+    font-size:64px;
+    color:white;
+    line-height:1.2;
+
+}
+
+.hero p{
+
+    color:#ececec;
+    font-size:22px;
+    margin:30px 0;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+    border:none;
+    border-radius:50px;
+    padding:15px 35px;
+
+}
+
+.btn-primary:hover{
+
+    background:#152c49;
+
+}
+
+.btn-outline-light{
+
+    border-radius:50px;
+
+}
+
+/*======================
+SOBRE MI
+======================*/
+
+#nosotros{
+
+    background:var(--light);
+
+}
+
+#nosotros img{
+
+    border-radius:25px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+}
+
+#nosotros h2{
+
+    color:var(--primary);
+
+    font-size:42px;
+
+}
+
+#nosotros h3{
+
+    color:var(--gold);
+
+    font-size:45px;
+
+}
+
+/*======================
+SERVICIOS
+======================*/
+
+.servicios{
+
+    background:#fff;
+
+}
+
+.servicio{
+
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    padding:25px;
+
+    transition:.4s;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.servicio:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+}
+
+.servicio i{
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+
+}
+
+.servicio h4{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+/*======================
+TESTIMONIOS
+======================*/
+
+#testimonios{
+
+    background:var(--light);
+
+}
+
+.testimonial{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.testimonial:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.testimonial strong{
+
+    color:var(--primary);
+
+}
+
+/*======================
+CONTACTO
+======================*/
+
+.contacto{
+
+    background:white;
+
+}
+
+.contacto h2{
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+}
+
+.form-control{
+
+    border-radius:15px;
+
+    border:1px solid #ddd;
+
+    padding:15px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:none;
+
+    border-color:var(--secondary);
+
+}
+
+/*======================
+FOOTER
+======================*/
+
+footer{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+/*======================
+WHATSAPP
+======================*/
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:32px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.12);
+
+    color:white;
+
+}
+
+/*======================
+ANIMACIONES
+======================*/
+
+img{
+
+    transition:.5s;
+
+}
+
+img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.card{
+
+    cursor:pointer;
+
+}
+
+/*======================
+SCROLLBAR
+======================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eee;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+/*======================
+RESPONSIVE
+======================*/
+
+@media(max-width:992px){
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:36px;
+
+}
+
+.navbar-brand{
+
+font-size:22px;
+
+}
+
+.btn{
+
+margin-top:10px;
+
+}
+
+section{
+
+padding:70px 0;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+#nosotros h2{
+
+font-size:32px;
+
+}
+
+}

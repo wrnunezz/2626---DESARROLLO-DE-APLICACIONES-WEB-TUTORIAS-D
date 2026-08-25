@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block content %}
+    <h1>Clientes</h1>
+    <h3>Listado de clientes</h3>
+     <h2>Tabla  de contenido de Clientes </h2>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nombre del Clientes</th>
+                        <th>Precio</th>
+                        <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.nombre }}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td><a href="{{ url_for('editar_cliente', id=cliente.id) }}" class="btn btn-sm btn-primary">Editar</a>
+                            <form action="{{ url_for('eliminar_cliente', id=cliente.id) }}" method="POST" style="display: inline;">
+                                <button type="submit" class="btn btn-sm btn-danger"> <i class="bi bi-trash3"></i>Eliminar</button>
+                            </form>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <p> Total de Registros:{{clientes|length}}</p>
+
+{% endblock %}

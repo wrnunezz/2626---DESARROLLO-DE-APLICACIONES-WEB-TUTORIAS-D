@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-4">
+
+        <div class="container">
+
+            <h1>Proyecto Integrador</h1>
+
+            <p class="mb-0">
+                
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">Mi Proyecto</a>
+
+            <button class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registro">Registro</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="borrar/index.html">Ingres al sistema</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    
+
+    <main class="container my-5">
+
+
+        <section id="inicio" class="mb-5">
+
+            <div class="text-center">
+
+                <h2>Bienvenido</h2>
+
+                <p>
+
+                    Esta página ha sido organizada utilizando una estructura
+                    preparada para trabajar posteriormente con plantillas de
+                    Flask (Jinja2).
+
+                </p>
+
+            </div>
+
+        </section> <br>
+
+        <!-- FORMULARIO -->
+
+        <section id="registro" class="mb-5">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-success text-white">
+
+                    <h3>Registrar Producto</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form id="formProducto">
+
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+
+                                <label class="form-label">
+
+                                    Nombre
+
+                                </label>
+
+                                <input type="text"
+                                       id="nombre"
+                                       class="form-control">
+
+                                <small class="text-danger"
+                                       id="errorNombre"></small>
+
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+
+                                <label class="form-label">
+
+                                    Precio
+
+                                </label>
+
+                                <input type="number"
+                                       id="precio"
+                                       class="form-control">
+
+                                <small class="text-danger"
+                                       id="errorPrecio"></small>
+
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+
+                                <label class="form-label">
+
+                                    Estado
+
+                                </label>
+
+                                <select id="estado"
+                                        class="form-select">
+
+                                    <option value="">
+
+                                        Seleccione
+
+                                    </option>
+
+                                    <option value="Disponible">
+
+                                        Disponible
+
+                                    </option>
+
+                                    <option value="Agotado">
+
+                                        Agotado
+
+                                    </option>
+
+                                </select>
+
+                                <small class="text-danger"
+                                       id="errorEstado"></small>
+
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-success">
+
+                            Guardar Producto
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MENSAJES -->
+
+        <section>
+
+            <div id="mensaje"
+                 class="alert d-none">
+
+            </div>
+
+        </section>
+
+        <!-- CONTENIDO DINÁMICO -->
+
+        <section id="productos">
+
+            <h2 class="mb-4">
+
+                Productos Registrados
+
+            </h2>
+
+            <!--
+                Esta sección será reemplazada posteriormente
+                por un bloque dinámico de Flask.
+
+                {% for producto in productos %}
+
+                ...
+
+                {% endfor %}
+
+            -->
+
+            <div class="row"
+                 id="contenedorProductos">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================================
+         FIN FUTURO BLOCK CONTENT
+         {% endblock %}
+         ========================================================== -->
+
+    <!-- FOOTER -->
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+
+        <div class="container">
+
+            <p>
+
+                Proyecto Integrador - Desarrollo de Aplicaciones Web
+
+            </p>
+
+            <p>
+
+                Universidad Estatal Amazónica
+
+            </p>
+
+            <small>
+
+                © 2026
+
+            </small>
+
+        </div>
+
+    </footer>
+    
+    <script src="resources/js/script7.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
