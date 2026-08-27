@@ -1,28 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3> Registrar Productos</h3>
+
+<h3>Registrar Producto</h3>
 
 <form method="POST">
-     {{ form.hidden_tag() }}
 
-     <div class="mb-3">
-        {{form.nombre.label}}
-        {{form.nombre(class="Producto")}}
+    {{ form.hidden_tag() }}
 
-        {% for e in form.nombre %}
-        <div>{{e}}</div>
+    <div class="mb-3">
+
+        {{ form.nombre.label }}
+
+        {{ form.nombre(class="form-control") }}
+
+        {% for e in form.nombre.errors %}
+
+            <div class="text-danger">
+                {{ e }}
+            </div>
+
         {% endfor %}
-     </div>
-     <div class="mb-3">
-        {{form.precio.label}}
-        {{form.precio(class="Producto")}}
 
-        {% for e in form.precio %}
-        <div>{{e}}</div>
+    </div>
+
+
+    <div class="mb-3">
+
+        {{ form.precio.label }}
+
+        {{ form.precio(class="form-control") }}
+
+        {% for e in form.precio.errors %}
+
+            <div class="text-danger">
+                {{ e }}
+            </div>
+
         {% endfor %}
-     </div>
 
+    </div>
+
+
+    {{ form.submit(class="btn btn-primary") }}
 
 </form>
 
