@@ -12,6 +12,7 @@
                     <tr>
                         <th>Nombre del Producto</th>
                         <th>Precio</th>
+                        <th>Stock</th>
                         <th>Opciones</th>
                     </tr>
                     </thead>
@@ -19,10 +20,10 @@
                     {% for producto in productos %}
                     <tr>
                         <td>{{ producto.nombre }}</td>
-                        <td>${{ "%.2f"|format(producto.precio) }}</td>
+                        <td>${{ "%.2f"|format(producto.precio_venta) }}</td>
                         <td>{{ producto.stock }}</td>
-                        <td><a href="{{ url_for('editar_producto', id=producto.id) }}" class="btn btn-sm btn-primary">Editar</a>
-                            <form action="{{ url_for('eliminar_producto', id=producto.id) }}" method="POST" style="display: inline;">
+                       <td><a href="{{ url_for('editar_producto', id=producto.id_producto) }}" class="btn btn-sm btn-primary">Editar</a>
+                            <form action="{{ url_for('eliminar_producto', id=producto.id_producto) }}" method="POST" style="display: inline;">
                                 <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                             </form>
                     </tr>
@@ -30,7 +31,7 @@
                     </tbody>
                 </table>
 
-                <p> Total de Regisros:{{productos|length}}</p>
+                <p> Total de Registros:{{productos|length}}</p>
     
 {% endblock %}
 
