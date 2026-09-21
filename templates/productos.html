@@ -4,6 +4,8 @@
 
 {% block content %}
     <h1>Productos</h1>
+
+    
             <!-- Agrega más filas según sea necesario -->
        <a href="{{url_for('nuevo_producto')}}"
        class="btn btn-success mb-3"> Nuevo Producto</a>
@@ -22,10 +24,92 @@
                         <td>{{ producto.nombre }}</td>
                         <td>${{ "%.2f"|format(producto.precio_venta) }}</td>
                         <td>{{ producto.stock }}</td>
-                       <td><a href="{{ url_for('editar_producto', id=producto.id_producto) }}" class="btn btn-sm btn-primary">Editar</a>
-                            <form action="{{ url_for('eliminar_producto', id=producto.id_producto) }}" method="POST" style="display: inline;">
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                            </form>
+                       <td> <!-- BOTÓN EDITAR -->
+                            <a href="{{ url_for('editar_producto', id=producto.id_producto) }}"
+                            class="btn btn-sm btn-primary">
+                                Editar
+                            </a>
+
+                            <!-- BOTÓN QUE ABRE EL MODAL -->
+                            <button type="button"
+                                    class="btn btn-sm btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalEliminar{{ producto.id_producto }}">
+                                Eliminar
+                            </button>
+
+
+                            <!-- MODAL DE CONFIRMACIÓN -->
+                            <div class="modal fade"
+                                id="modalEliminar{{ producto.id_producto }}"
+                                tabindex="-1"
+                                aria-labelledby="modalEliminarLabel{{ producto.id_producto }}"
+                                aria-hidden="true">
+
+                                <div class="modal-dialog modal-dialog-centered">
+
+                                    <div class="modal-content">
+
+                                        <!-- ENCABEZADO -->
+                                        <div class="modal-header">
+
+                                            <h5 class="modal-title"
+                                                id="modalEliminarLabel{{ producto.id_producto }}">
+                                                Confirmar eliminación
+                                            </h5>
+
+                                            <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Cerrar">
+                                            </button>
+
+                                        </div>
+
+
+                                        <!-- CUERPO -->
+                                        <div class="modal-body">
+
+                                            <p>
+                                                ¿Está seguro de que desea eliminar el producto
+                                                <strong>{{ producto.nombre }}</strong>?
+                                            </p>
+
+                                            <div class="alert alert-warning mb-0">
+                                                Esta acción no se podrá realizar si el producto
+                                                está asociado a una factura.
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- PIE DEL MODAL -->
+                                        <div class="modal-footer">
+
+                                            <button type="button"
+                                                    class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">
+                                                Cancelar
+                                            </button>
+
+                                            <!-- FORMULARIO QUE REALMENTE ELIMINA -->
+                                            <form action="{{ url_for('eliminar_producto', id=producto.id_producto) }}"
+                                                method="POST">
+
+                                                <button type="submit"
+                                                        class="btn btn-danger">
+                                                    Sí, eliminar
+                                                </button>
+
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div> </td>
                     </tr>
                     {% endfor %}
                     </tbody>

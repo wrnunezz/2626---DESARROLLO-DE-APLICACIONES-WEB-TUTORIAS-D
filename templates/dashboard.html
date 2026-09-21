@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}
+Panel de Administración
+{% endblock %}
+
+
+{% block content %}
+
+<h1>
+    Panel de Administración
+</h1>
+
+
+<div class="alert alert-success">
+
+    Bienvenido
+
+    <strong>
+        {{ current_user.nombre }}
+    </strong>
+
+</div>
+
+
+<div class="row g-3">
+
+
+    <!-- PRODUCTOS -->
+
+    <div class="col-md-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <i class="fa-solid fa-box fa-3x mb-3"></i>
+
+                <h5>Productos</h5>
+
+                <a
+                    href="{{ url_for('productos') }}"
+                    class="btn btn-primary"
+                >
+                    Ingresar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLIENTES -->
+
+    <div class="col-md-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <i class="fa-solid fa-users fa-3x mb-3"></i>
+
+                <h5>Clientes</h5>
+
+                <a
+                    href="{{ url_for('clientes') }}"
+                    class="btn btn-primary"
+                >
+                    Ingresar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROVEEDORES -->
+
+    <div class="col-md-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <i class="fa-solid fa-truck fa-3x mb-3"></i>
+
+                <h5>Proveedores</h5>
+
+                <a
+                    href="{{ url_for('proveedores') }}"
+                    class="btn btn-primary"
+                >
+                    Ingresar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FACTURACIÓN -->
+
+    <div class="col-md-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <i class="fa-solid fa-file-invoice fa-3x mb-3"></i>
+
+                <h5>Facturación</h5>
+
+                <a
+                    href="{{ url_for('facturacion') }}"
+                    class="btn btn-primary"
+                >
+                    Ingresar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

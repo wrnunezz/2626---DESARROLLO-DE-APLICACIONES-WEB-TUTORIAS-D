@@ -80,68 +80,122 @@
             id="menuSistema"
         >
 
-            <ul class="navbar-nav ms-auto">
+            <<li class="nav-item">
+
+    <a class="nav-link"
+       href="{{ url_for('home') }}">
+
+        Inicio
+
+    </a>
+
+</li>
 
 
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                    >
-                        Inicio
-                    </a>
-
-                </li>
+{% if current_user.is_authenticated %}
 
 
-                <li class="nav-item">
+    <li class="nav-item">
 
-                    <a
-                        class="nav-link"
-                        href="{{ url_for('productos') }}"
-                    >
-                        Productos
-                    </a>
+        <a class="nav-link"
+           href="{{ url_for('dashboard') }}">
 
-                </li>
+            Panel
 
+        </a>
 
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                
-                    >
-                        Clientes
-                    </a>
-
-                </li>
+    </li>
 
 
-                <li class="nav-item">
-<a
-                        class="nav-link"
-                        href="{{ url_for('proveedores') }}"
-                    >
-                        Proveedores
-                    </a>
+    <li class="nav-item">
 
-                </li>
+        <a class="nav-link"
+           href="{{ url_for('productos') }}">
 
+            Productos
 
-                <li class="nav-item">
+        </a>
 
-                    <a
-                        class="nav-link"
-                    
-                    >
-                        Facturación
-                    </a>
-
-                </li>
+    </li>
 
 
-            </ul>
+    <li class="nav-item">
+
+        <a class="nav-link"
+           href="{{ url_for('clientes') }}">
+
+            Clientes
+
+        </a>
+
+    </li>
+
+
+    <li class="nav-item">
+
+        <a class="nav-link"
+           href="{{ url_for('proveedores') }}">
+
+            Proveedores
+
+        </a>
+
+    </li>
+
+
+    <li class="nav-item">
+
+        <a class="nav-link"
+           href="{{ url_for('facturacion') }}">
+
+            Facturación
+
+        </a>
+
+    </li>
+
+
+    <li class="nav-item">
+
+        <span class="nav-link text-warning">
+
+            <i class="fa-solid fa-user"></i>
+
+            {{ current_user.nombre }}
+
+        </span>
+
+    </li>
+
+
+    <li class="nav-item">
+
+        <a class="nav-link text-danger"
+           href="{{ url_for('logout') }}">
+
+            Cerrar sesión
+
+        </a>
+
+    </li>
+
+
+{% else %}
+
+
+    <li class="nav-item">
+
+        <a class="nav-link"
+           href="{{ url_for('login') }}">
+
+            Ingresar
+
+        </a>
+
+    </li>
+
+
+{% endif %}
 
         </div>
 
