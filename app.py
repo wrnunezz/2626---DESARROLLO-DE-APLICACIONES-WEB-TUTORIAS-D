@@ -18,7 +18,7 @@ from Models.producto import Producto
 from Conexion.conexionp import obtener_conexion
 #from Conexion.conexionp import obtener_conexion
 
-# Importar formulario de productos Form 
+# Importar formulario de productos Form . 
 
 from forms.producto_form import ProductoForm
 # crear una instancia de la aplicación Flask
